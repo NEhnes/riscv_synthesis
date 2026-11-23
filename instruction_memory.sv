@@ -17,7 +17,7 @@ module instruction_memory #(
   logic [DATA_WIDTH-1:0] mem [0:(2**ADDR_WIDTH)-1];
 
   initial begin
-	$readmemh("find_maximum_in_array_machine_code.mem", mem); // Initialize ROM with data from memory.list file
+	$readmemh("counter_program.mem", mem); // Initialize ROM with data from memory.list file
   end
   
   // --------------------------------------------------------
