@@ -203,7 +203,7 @@ module riscv_top #(
   // ALU
   // --------------------------------------------------------
   assign alu_a = op1_sel ? pc         : rs1_data;
-  assign alu_b = op2_sel ? pc         : rs2_data;
+  assign alu_b = op2_sel ? immediate  : rs2_data;
   
   alu u_alu (
     .alu_a   (alu_a),
