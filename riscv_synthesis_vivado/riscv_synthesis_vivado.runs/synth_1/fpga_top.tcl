@@ -57,7 +57,9 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
+set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 2
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -72,6 +74,7 @@ set_property ip_output_repo /home/nathan/riscv_synthesis/riscv_synthesis_vivado/
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_mem /home/nathan/riscv_synthesis/counter_program.mem
 read_verilog -library xil_defaultlib -sv {
   /home/nathan/riscv_synthesis/risc_pkg.sv
   /home/nathan/riscv_synthesis/alu.sv

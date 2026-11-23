@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2026.1 (lin64) Build 6511674 Tue Jun 16 11:01:26 MDT 2026
-| Date         : Mon Nov 23 00:13:20 2026
+| Date         : Mon Nov 23 17:33:31 2026
 | Host         : nathanUbuntu running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_control_sets -verbose -file fpga_top_control_sets_placed.rpt
 | Design       : fpga_top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    38 |
-|    Minimum number of control sets                        |    38 |
+| Total control sets                                       |     5 |
+|    Minimum number of control sets                        |     5 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
 | Unused register locations in slices containing registers |    15 |
@@ -39,7 +39,7 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    38 |
+| Total control sets |     5 |
 | >= 0 to < 4        |     1 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
@@ -47,7 +47,7 @@ Table of Contents
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |    36 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -60,9 +60,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              25 |            7 |
 | No           | No                    | Yes                    |               1 |            1 |
-| No           | Yes                   | No                     |              32 |           17 |
-| Yes          | No                    | No                     |             512 |          422 |
-| Yes          | No                    | Yes                    |            1063 |          579 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              71 |           45 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,47 +70,14 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------+-----------------------------------------+---------------------------+------------------+----------------+--------------+
-|   Clock Signal  |              Enable Signal              |      Set/Reset Signal     | Slice Load Count | Bel Load Count | Bels / Slice |
-+-----------------+-----------------------------------------+---------------------------+------------------+----------------+--------------+
-|  cpu_clk        |                                         | BTNC_IBUF                 |                1 |              1 |         1.00 |
-|  cpu_clk        | u_riscv_top/u_fetch/led_q[7]_i_7_0[0]   | BTNC_IBUF                 |                3 |              8 |         2.67 |
-|  BCLK_IBUF_BUFG |                                         |                           |                7 |             25 |         3.57 |
-|  cpu_clk        | u_riscv_top/u_fetch/imem_req            | BTNC_IBUF                 |               22 |             31 |         1.41 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_33[0]   | BTNC_IBUF                 |               17 |             32 |         1.88 |
-|  n_0_4061_BUFG  |                                         | u_riscv_top/u_fetch/AR[0] |               17 |             32 |         1.88 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_34[0]   | BTNC_IBUF                 |               27 |             32 |         1.19 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_35[0]   | BTNC_IBUF                 |               11 |             32 |         2.91 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_36[0]   | BTNC_IBUF                 |               22 |             32 |         1.45 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_37[0]   | BTNC_IBUF                 |               18 |             32 |         1.78 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_38[0]   | BTNC_IBUF                 |               21 |             32 |         1.52 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_39[0]   | BTNC_IBUF                 |               17 |             32 |         1.88 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_40[0]   | BTNC_IBUF                 |               10 |             32 |         3.20 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_41[0]   | BTNC_IBUF                 |               14 |             32 |         2.29 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_42[0]   | BTNC_IBUF                 |               19 |             32 |         1.68 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_43[0]   | BTNC_IBUF                 |               13 |             32 |         2.46 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_44[0]   | BTNC_IBUF                 |                9 |             32 |         3.56 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_45[0]   | BTNC_IBUF                 |               11 |             32 |         2.91 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_46[0]   | BTNC_IBUF                 |               17 |             32 |         1.88 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_47[0]   | BTNC_IBUF                 |               23 |             32 |         1.39 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_16[0]   | BTNC_IBUF                 |               19 |             32 |         1.68 |
-|  cpu_clk        | u_riscv_top/u_fetch/E[0]                | BTNC_IBUF                 |               23 |             32 |         1.39 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_10[0]   | BTNC_IBUF                 |               16 |             32 |         2.00 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_11[0]   | BTNC_IBUF                 |               18 |             32 |         1.78 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_12[0]   | BTNC_IBUF                 |               18 |             32 |         1.78 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_13[0]   | BTNC_IBUF                 |               21 |             32 |         1.52 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_14[0]   | BTNC_IBUF                 |               16 |             32 |         2.00 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_15[0]   | BTNC_IBUF                 |               30 |             32 |         1.07 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_32[0]   | BTNC_IBUF                 |               11 |             32 |         2.91 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_17[0]   | BTNC_IBUF                 |               15 |             32 |         2.13 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_18[0]   | BTNC_IBUF                 |               20 |             32 |         1.60 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_19[0]   | BTNC_IBUF                 |               18 |             32 |         1.78 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_20[0]   | BTNC_IBUF                 |               15 |             32 |         2.13 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_21[0]   | BTNC_IBUF                 |               19 |             32 |         1.68 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_29[0]   | BTNC_IBUF                 |               17 |             32 |         1.88 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_30[0]   | BTNC_IBUF                 |               11 |             32 |         2.91 |
-|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_31[0]   | BTNC_IBUF                 |               18 |             32 |         1.78 |
-|  cpu_clk        | u_riscv_top/u_fetch/mem[62][7]_i_3_0[0] |                           |              422 |            512 |         1.21 |
-+-----------------+-----------------------------------------+---------------------------+------------------+----------------+--------------+
++-----------------+--------------------------------------+------------------+------------------+----------------+--------------+
+|   Clock Signal  |             Enable Signal            | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------+--------------------------------------+------------------+------------------+----------------+--------------+
+|  cpu_clk        |                                      | BTNC_IBUF        |                1 |              1 |         1.00 |
+|  cpu_clk        | u_riscv_top/u_fetch/req_reg_reg_3[0] | BTNC_IBUF        |                6 |              8 |         1.33 |
+|  BCLK_IBUF_BUFG |                                      |                  |                7 |             25 |         3.57 |
+|  cpu_clk        | u_riscv_top/u_fetch/imem_req         | BTNC_IBUF        |               18 |             31 |         1.72 |
+|  cpu_clk        | u_riscv_top/u_fetch/E[0]             | BTNC_IBUF        |               21 |             32 |         1.52 |
++-----------------+--------------------------------------+------------------+------------------+----------------+--------------+
 
 
