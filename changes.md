@@ -16,6 +16,12 @@
   - button to reset mapping
   - riscv top instantiation
 
+# CLK WIZRD
+
+
+# PROGRAM
+- added program.hex (unverified)
+
 
 
 
@@ -31,3 +37,4 @@ write the program itself (should be simple but hard)
 change where the program loads from
 
 make sure LEDs address is outside the program's scope.
+check over the constraints file

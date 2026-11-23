@@ -8,7 +8,7 @@ module fpga_top (
     // about 17 Mhz -> 1 Hz
     // idc if Vivado says it's unconstrained
     logic [26:0] div_q;
-    always_ff @(posedge GCLK)
+    always_ff @(posedge BCLK)
         div_q <= div_q + 27'd1;
 
     // global clock buffer
