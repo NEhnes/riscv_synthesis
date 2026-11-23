@@ -1,0 +1,1 @@
+added 8 led output array to top module port declaration

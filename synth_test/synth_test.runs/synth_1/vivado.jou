@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sun Nov 22 22:00:57 2026
+# Process ID         : 12234
+# Current directory  : /home/nathan/riscv _synthesis/synth_test/synth_test.runs/synth_1
+# Command line       : vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file           : /home/nathan/riscv _synthesis/synth_test/synth_test.runs/synth_1/top.vds
+# Journal file       : /home/nathan/riscv _synthesis/synth_test/synth_test.runs/synth_1/vivado.jou
+# Running On         : nathanUbuntu
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz
+# CPU Frequency      : 3802.090 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 33283 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 35431 MB
+# Available Virtual  : 31969 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
