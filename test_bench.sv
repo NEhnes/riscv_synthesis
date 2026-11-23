@@ -7,7 +7,7 @@ module test_bench();
   always #5 clk = ~clk;  // Clock with a period of 10 time units
 
   // Instantiate the yarp_top module
-  top #(.RESET_PC(32'h0)) dut (
+  riscv_top #(.RESET_PC(32'h0)) dut (
     .clk(clk),
     .reset_n(reset_n)
   );

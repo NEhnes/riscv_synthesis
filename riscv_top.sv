@@ -4,12 +4,29 @@
 // --------------------------------------------------------
 import risc_pkg::*;
 
-module top #(
+module riscv_top #(
   parameter RESET_PC = 32'h0000
 )(
-  input logic clk,
-  input logic reset_n
+  input  logic       clk,
+  input  logic       reset_n,
+  output logic [7:0] led
 );
+
+  // --------------------------------------------------------
+  // LED MMIO
+  // --------------------------------------------------------
+  localparam logic [31:0] LED_ADDR = 32'h0000_0100; // MMIO address
+  logic [7:0] led_q;                                // register for current LED state
+
+  // seq logic: update led register to memory state
+  always_ff @(posedge clk or negedge reset_n) begin
+  if (!reset_n)
+    led_q <= '0;                                    // reset: LEDs off
+  else if (dmem_req && dmem_wr_en && (dmem_addr == LED_ADDR))
+    led_q <= dmem_wr_data[7:0];                     // store to 0x100: latch the value
+  end
+
+  assign led = led_q;                                 // drive the output pins
 
   // --------------------------------------------------------
   // Instruction memory interface
